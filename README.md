@@ -8,7 +8,7 @@ deployment's lake, each economy's policy rate each day, as rates; and its
 long series on consumer prices (`WS_LONG_CPI`), each
 economy's index level each month, as the BIS's own figures. It reads the
 BIS's Data Portal API (SDMX), and holds the `data` role, a data plugin. This
-is release 0.1.0. How to set it up and use it is in [docs/](docs/README.md);
+is release 0.1.1. How to set it up and use it is in [docs/](docs/README.md);
 how a plugin like it is built is documented at
 [open-meridian.dev](https://open-meridian.dev).
 

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bis"
-version = "0.1.0"
+version = "0.1.1"
 description = "The Bank for International Settlements' central bank policy rates and long consumer price series into an Open Meridian deployment's lake"
 license = { text = "Apache-2.0" }
 requires-python = ">=3.11"

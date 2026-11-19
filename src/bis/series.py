@@ -16,9 +16,10 @@ per year").
 own money market, so this version states each one simple, on the day count
 of that currency's overnight money market as its administrator publishes its
 benchmark (actual/360 for the dollar, the euro, the Swiss franc, the Swedish
-krona; actual/365 for sterling, the Canadian and Australian dollars, the
-yen; business/252, compounded annually, for Brazil's Selic) -- the plugin's
-statement, said on the Datasets page, never the BIS's. An economy whose
+krona, the renminbi, the rupiah, the Icelandic króna, the dirham, the Philippine
+peso, the Serbian dinar; actual/365 for sterling, the Canadian and Australian
+dollars, the yen, the Turkish lira; business/252, compounded annually, for
+Brazil's Selic) -- the plugin's statement, said on the Datasets page, never the BIS's. An economy whose
 money-market day count this version does not hold is **not carried**: its
 rates are read and not recorded, and the Datasets page says why, rather than
 guess one.
@@ -51,15 +52,28 @@ ACT_365 = RateConvention(day_count="act_365_fixed", compounding="simple")
 BUS_252 = RateConvention(day_count="bus_252", compounding="compounded", periods_per_year=1)
 
 #: Each economy's money-market day count, as its overnight benchmark's
-#: administrator publishes it: SOFR, €STR, SARON, SWESTR, DESTR, CZEONIA,
-#: HUFONIA, TIIE de fondeo, the Chilean, Colombian and Peruvian interbank
-#: overnight rates, ROBOR on 360; SONIA, CORRA, AONIA, NZIONIA, TONA, HONIA,
-#: ZARONIA, KOFR, NOWA, WIRON, MYOR, THOR, MIBOR, SHIR and RUONIA on 365.
+#: administrator publishes it, or as the central bank states it for the
+#: facility its policy rate is set on: SOFR, €STR, SARON, SWESTR, DESTR,
+#: CZEONIA, HUFONIA, TIIE de fondeo, the Chilean, Colombian and Peruvian
+#: interbank overnight rates, ROBOR, JIBOR (Bank Indonesia), MONIA (Bank
+#: Al-Maghrib), PHIREF (the Bankers Association of the Philippines'
+#: methodology, April 2021: the basis is the benchmark's, not the BSP's), the
+#: Central Bank of Iceland's facility rates, the National Bank of Serbia's repo
+#: and the People's Bank of China's rule for RMB loan interest (the BIS's
+#: Chinese series is the Loan Prime Rate) on 360; SONIA, CORRA, AONIA, NZIONIA,
+#: TONA, HONIA, ZARONIA, KOFR, NOWA, WIRON, MYOR, THOR, MIBOR, SHIR, RUONIA
+#: and TLREF (Borsa Istanbul's methodology: actual/365, the simple rate, never
+#: the compounded one) on 365. Sources: bis-daycount research, 2026-11-19.
+#: China: a June 2026 PBoC consultation draft (people's RMB deposit and loan
+#: rate rules, 5 Jun 2026, https://www.cnfin.com/hb-lb/detail/20260605/4422766_1.html)
+#: would move it to 365 (366 in leap years); this plugin keeps 360 until a
+#: final rule is issued. Kuwait (KW), Saudi Arabia (SA) and North Macedonia
+#: (MK) stay out: no central-bank or benchmark source is read for them.
 CONVENTIONS: dict[str, RateConvention] = {
     **{area: ACT_360 for area in ("US", "XM", "CH", "SE", "DK", "CZ", "HU", "MX", "CL", "CO",
-                                  "PE", "RO")},
+                                  "PE", "RO", "CN", "ID", "IS", "MA", "PH", "RS")},
     **{area: ACT_365 for area in ("GB", "CA", "AU", "NZ", "JP", "HK", "ZA", "KR", "NO", "PL",
-                                  "MY", "TH", "IN", "IL", "RU")},
+                                  "MY", "TH", "IN", "IL", "RU", "TR")},
     "BR": BUS_252,
 }  # fmt: skip
 #: Why an economy's policy rate is read and not recorded.

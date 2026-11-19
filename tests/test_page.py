@@ -101,7 +101,7 @@ def test_the_tools_answer_what_the_pages_show(client: PageClient) -> None:
     assert held["WS_CBPOL.D.CA"]["source"] == "Bank of Canada"
     assert held["WS_CBPOL.D.CA"]["latest_day"] == "2026-11-16"
     assert held["WS_CBPOL.D.XM"]["miss"] == "not held: reported missing"
-    assert held["WS_CBPOL.D.TR"]["miss"] == "not carried"
+    assert held["WS_CBPOL.D.KW"]["miss"] == "not carried"
     assert held["WS_LONG_CPI.M.GB.628"]["convention"] == "An index level, based 2010 = 100"
 
 
