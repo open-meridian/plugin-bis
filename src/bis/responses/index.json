@@ -1,0 +1,19 @@
+{
+  "said": "The BIS Data Portal's real responses (its SDMX REST API, https://stats.bis.org/api/v2/), recorded by meridian-bis's authors on 2026-11-19, the body gzipped, as SDMX-CSV: every central bank policy rate (the WS_CBPOL dataflow, daily) from 3 August to 19 November 2026, and every long consumer price index level (the WS_LONG_CPI dataflow, monthly, 2010 = 100) from January 2025 to November 2026. The BIS allows use of its statistics provided the BIS is cited as the source, a translation is marked unofficial and no endorsement is implied; including them in a commercial product must not add a charge to its users (https://data.bis.org/help/legal). Sample data answers each request for a range from them, and the tests read them.",
+  "cbpol": {
+    "path": "/data/dataflow/BIS/WS_CBPOL/1.0/D.?startPeriod=2026-08-03&endPeriod=2026-11-19",
+    "file": "cbpol-20260803-20261119.csv.gz",
+    "status": 200,
+    "date": "Thu, 19 Nov 2026 13:01:21 GMT",
+    "first_period": "2026-08-03",
+    "last_period": "2026-11-17"
+  },
+  "cpi": {
+    "path": "/data/dataflow/BIS/WS_LONG_CPI/1.0/M..628?startPeriod=2025-01&endPeriod=2026-11",
+    "file": "cpi-202501-202611.csv.gz",
+    "status": 200,
+    "date": "Thu, 19 Nov 2026 13:01:26 GMT",
+    "first_period": "2025-01",
+    "last_period": "2026-09"
+  }
+}
