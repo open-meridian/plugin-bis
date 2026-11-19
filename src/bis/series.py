@@ -19,8 +19,8 @@ benchmark (actual/360 for the dollar, the euro, the Swiss franc, the Swedish
 krona, the renminbi, the rupiah, the Icelandic króna, the dirham, the Philippine
 peso, the Serbian dinar; actual/365 for sterling, the Canadian and Australian
 dollars, the yen, the Turkish lira; business/252, compounded annually, for
-Brazil's Selic) -- the plugin's statement, said on the Datasets page, never the BIS's. An economy whose
-money-market day count this version does not hold is **not carried**: its
+Brazil's Selic) -- the plugin's statement, said on the Datasets page, never the
+BIS's. An economy whose money-market day count this version does not hold is **not carried**: its
 rates are read and not recorded, and the Datasets page says why, rather than
 guess one.
 

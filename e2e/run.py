@@ -42,7 +42,7 @@ CBPOL = "bis:bis_cbpol"
 CPI = "bis:bis_long_cpi"
 #: The series carried that the committed answers' current ranges hold a
 #: value for: each reported missing once a process.
-MISSES = 98
+MISSES = 97
 
 
 class Failed(Exception):
