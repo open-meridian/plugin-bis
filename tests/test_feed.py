@@ -80,10 +80,10 @@ def test_a_rate_not_carried_is_never_asked_for(tmp_path: Path) -> None:
     feed = work(tmp_path, plugin)
     asyncio.run(feed.check())
     asked = {i.value for p in plugin.on("ResolveIdentifier") for i in p.identifiers}
-    assert "WS_CBPOL.D.TR" not in asked and "WS_CBPOL.D.CA" in asked
-    turkey = feed.status.records["WS_CBPOL.D.TR"]
-    assert not turkey.series.carried and not turkey.instrument_id
-    assert HELD["WS_CBPOL.D.TR"] not in {r.meta.subjects[0].entity_id for r in rates_of(plugin)}
+    assert "WS_CBPOL.D.KW" not in asked and "WS_CBPOL.D.CA" in asked
+    kuwait = feed.status.records["WS_CBPOL.D.KW"]
+    assert not kuwait.series.carried and not kuwait.instrument_id
+    assert HELD["WS_CBPOL.D.KW"] not in {r.meta.subjects[0].entity_id for r in rates_of(plugin)}
 
 
 def test_a_record_not_held_is_reported_missing_and_waits(tmp_path: Path) -> None:

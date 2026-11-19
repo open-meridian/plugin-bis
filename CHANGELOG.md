@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.1.1
+
+Seven more economies' policy rates, each with a cited day count (the
+product owner's item 177, 2026-11-19): Iceland, Serbia, Indonesia, Morocco
+and China on actual/360, simple; Türkiye on actual/365, simple (the simple
+rate, never the compounded one); the Philippines on actual/360, simple, the
+basis of its PHIREF benchmark. Each is cited in series.py. China keeps 360
+although a June 2026 PBoC draft would move it to 365 (366 in leap years),
+until a final rule is issued. Kuwait, Saudi Arabia and North Macedonia stay
+not carried: no central-bank or benchmark source states their day count.
+
 ## 0.1.0
 
 On open-meridian 0.36.0, contract 30, on core aae501d's harness. The

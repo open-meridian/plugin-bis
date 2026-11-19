@@ -42,7 +42,7 @@ CBPOL = "bis:bis_cbpol"
 CPI = "bis:bis_long_cpi"
 #: The series carried that the committed answers' current ranges hold a
 #: value for: each reported missing once a process.
-MISSES = 91
+MISSES = 97
 
 
 class Failed(Exception):
@@ -155,7 +155,7 @@ def run():
     records = {r["code"]: r for r in datasets["records"]}
     missed = [r for r in records.values() if r["miss"] == "not held: reported missing"]
     must(len(missed) == MISSES and not any(r["instrument_id"] for r in records.values())
-         and records["WS_CBPOL.D.TR"]["miss"] == "not carried"
+         and records["WS_CBPOL.D.KW"]["miss"] == "not carried"
          and records["WS_CBPOL.D.CA"]["source"] == "Bank of Canada",
          f"step 3, read_datasets names each series and why it has no record: {datasets['records'][:3]}")
     shown = page("bis", "admin", "/datasets?tab=records")
