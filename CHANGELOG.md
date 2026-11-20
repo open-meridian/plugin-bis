@@ -1,10 +1,5 @@
 # Changelog
 
-## 0.1.2
-
-SDK 0.37.0: waits for a lost sidecar; its storage is read once registered,
-on an instance run as shards or with a standby pod the shard's own folder.
-
 ## 0.1.1
 
 Seven more economies' policy rates, each with a cited day count (the
@@ -15,6 +10,11 @@ basis of its PHIREF benchmark. Each is cited in series.py. China keeps 360
 although a June 2026 PBoC draft would move it to 365 (366 in leap years),
 until a final rule is issued. Kuwait, Saudi Arabia and North Macedonia stay
 not carried: no central-bank or benchmark source states their day count.
+
+SDK 0.37.0: waits for a lost sidecar; its storage is read once registered,
+on an instance run as shards or with a standby pod the shard's own folder.
+
+SDK 0.37.1: a raw record kept from two threads at once waits instead of being dropped.
 
 ## 0.1.0
 
