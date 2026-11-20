@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.2
+
+SDK 0.37.0: waits for a lost sidecar; its storage is read once registered,
+on an instance run as shards or with a standby pod the shard's own folder.
+
 ## 0.1.1
 
 Seven more economies' policy rates, each with a cited day count (the
