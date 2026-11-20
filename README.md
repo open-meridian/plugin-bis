@@ -12,7 +12,7 @@ is release 0.1.1. How to set it up and use it is in [docs/](docs/README.md);
 how a plugin like it is built is documented at
 [open-meridian.dev](https://open-meridian.dev).
 
-It is built on the SDK it pins, `open-meridian==0.37.0`, which declares
+It is built on the SDK it pins, `open-meridian==0.37.1`, which declares
 contract 30 (each dataset's terms in words and how a gap in it is
 recovered; its work one class for its role, registered with `meridian.run`).
 
